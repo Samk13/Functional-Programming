@@ -43,8 +43,8 @@ var Window = function(tabs) {
   
   // When you close a tab
   Window.prototype.tabClose = function (index) {
-    var tabsBeforeIndex = this.tabs.splice(0, index); // get the tabs before the tab
-    var tabsAfterIndex = this.tabs.splice(index); // get the tabs after the tab
+    var tabsBeforeIndex = this.tabs.slice(0, index); // get the tabs before the tab
+    var tabsAfterIndex = this.tabs.slice(index); // get the tabs after the tab
   
     this.tabs = tabsBeforeIndex.concat(tabsAfterIndex); // join them together 
     return this;
